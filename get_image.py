@@ -1,3 +1,10 @@
+"""
+This python code is to scrape images from website using Chrome Driver.
+
+To execute this code, run "python get_image.py [search_term] [target_path] [number_images]"
+
+"""
+
 import requests
 import sys
 import os
@@ -92,5 +99,10 @@ def search_and_download(search_term:str,driver_path:str,target_path='./images',n
         
 if __name__ == '__main__':
     search_term = sys.argv[1]
+    target_path = sys.argv[2]
+    number_images = sys.argv[3]
     DRIVER_PATH = "./chromedriver_ver_88/chromedriver"
-    search_and_download(search_term=search_term, driver_path=DRIVER_PATH, number_images=300)
+    search_and_download(search_term=search_term, 
+                        driver_path=DRIVER_PATH, 
+                        target_path=target_path, 
+                        number_images=int(number_images))
